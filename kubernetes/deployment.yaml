@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: hello-python
-        image: iad.ocir.io/recvue/maplelabs/hello-python:tag_ver
+        image: gmanal1005/hello-python:tag_ver
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
