@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Subscribe</title>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark shadow fixed-top">
+    <a class="navbar-brand" href="{{ url_for('index') }}">
+        <img src="https://res.cloudinary.com/anchal-gupta/image/upload/v1605780248/Illustrations/python-logo_x0nlrz.png" class="img-fluid pr-1" style="width: 2rem;" />
+        App
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{{ url_for('services') }}">Services</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{{ url_for('subscribe') }}">Subscribe</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5 pt-4">
+    <div class="row mt-5">
+        <div class="col-sm-6">
+            <img src="https://res.cloudinary.com/anchal-gupta/image/upload/v1605773508/Illustrations/undraw_Newsletter_re_wrob_sfhove.png" class="img-fluid" />
+        </div>
+        <div class="col-sm-6">
+            <h1 class="text-center py-4">Subscribe</h1>
+            <form>
+                <div class="form-group icon-form mb-3 shadow-sm">
+                    <span class=" form-control-icon fas fa-user text-blue"></span>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" required />
+                </div>
+                <div class="form-group icon-form mb-3 shadow-sm">
+                    <span class=" form-control-icon fas fa-envelope text-blue"></span>
+                    <input type="email" class="form-control" id="email" placeholder="EmailID" required />
+                </div>
+                <input type="submit" class="btn btn-dark btn-block mb-3" onclick="myFunction()" value="SUBSCRIBE"/>
+            </form>
+        </div>
+    </div>  
+</div>
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<script>
+
+    function sleep(milliseconds) {
+        let timeStart = new Date().getTime();
+        while (true) {
+            let elapsedTime = new Date().getTime() - timeStart;
+            if (elapsedTime > milliseconds) {
+                break;
+            }
+        }
+    }
+    
+    function myFunction() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        if (name && email) {
+            alert("Processing ...");
+            this.sleep(10000);
+            alert("Thank You " + name + " for subscribing !!!");
+        }
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+.img-50 {
+    width: 50% !important;
+}
+
+.icon-form .form-control { padding-left: 2.375rem; }
+.icon-form .form-control-icon {
+    position: absolute; text-align: center; pointer-events: none;
+    z-index: 2; display: block;
+    width: 2.375rem; height: 2.375rem; line-height: 2.375rem;
+    color: #aaa;
+}
+
+.text-blue {
+    color: #6159E6 !important;
+}
