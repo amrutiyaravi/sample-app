@@ -15,7 +15,7 @@ pipeline {
         environment name: 'BUILD', value: 'true'
       }
       steps {
-        build job: 'bg-build-app-docker-image', parameters: [
+        build job: 'build-app-docker-image', parameters: [
           string(name: 'VERSION', value: "${env.VERSION}"),
           string(name: 'APPLICATION', value: "${env.APPLICATION}"),
           string(name: 'ENVIRONMENT', value: "${env.ENVIRONMENT}")
@@ -28,7 +28,7 @@ pipeline {
         environment name: 'DEPLOY', value: 'true'
       }
       steps {
-        build job: 'bg-deploy-app-pods', parameters: [
+        build job: 'deploy-app-pods', parameters: [
           string(name: 'VERSION', value: "${env.VERSION}"),
           string(name: 'APPLICATION', value: "${env.APPLICATION}"),
           string(name: 'ENVIRONMENT', value: "${env.ENVIRONMENT}")
@@ -41,7 +41,7 @@ pipeline {
         environment name: 'TEST', value: 'true'
       }
       steps {
-        build job: 'bg-run-test-plan', parameters: [
+        build job: 'run-test-plan', parameters: [
           string(name: 'VERSION', value: "${env.VERSION}"),
           string(name: 'APPLICATION', value: "${env.APPLICATION}"),
           string(name: 'ENVIRONMENT', value: "${env.ENVIRONMENT}")
@@ -54,7 +54,7 @@ pipeline {
         environment name: 'UPGRADE', value: 'true'
       }
       steps {
-        build job: 'bg-update-version', parameters: [
+        build job: 'update-version', parameters: [
           string(name: 'VERSION', value: "${env.VERSION}"),
           string(name: 'APPLICATION', value: "${env.APPLICATION}"),
           string(name: 'ENVIRONMENT', value: "${env.ENVIRONMENT}")
