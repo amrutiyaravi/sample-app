@@ -15,4 +15,3 @@ spec:
     app: hello-python
     version: tagver
     env: environment
-    owner: maplelabs
