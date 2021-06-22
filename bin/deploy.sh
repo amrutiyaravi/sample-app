@@ -6,10 +6,11 @@ kubectl get po -o wide --namespace=${ENVIRONMENT}
 
 # apply deployment
 printf "\033[34m ------------------------------------------------ apply deployment ------------------------------------------------ \033[0m \n"
-exit_code=0
+#exit_code=0
 
 #/var/lib/jenkins/kubectl apply -f ${APP_HOME}/kubernetes/deployment.yaml --namespace=${ENVIRONMENT} --kubeconfig=${CLUSTER}
-helm install hello-python-`echo ${VERSION} | tr . -` ${APP_HOME}/kubernetes/hello-python/ --values ${APP_HOME}/kubernetes/hello-python/values.yaml --set image.tag=${VERSION} --namespace=${ENVIRONMENT} -o=json > bin/deploy.json
+#helm install hello-python-`echo ${VERSION} | tr . -` ${APP_HOME}/kubernetes/hello-python/ --values ${APP_HOME}/kubernetes/hello-python/values.yaml --set image.tag=${VERSION} --namespace=${ENVIRONMENT} -o=json > bin/deploy.json
+helm install hello-python-`echo ${VERSION} | tr . -` ${APP_HOME}/kubernetes/hello-python/ --values ${APP_HOME}/kubernetes/hello-python/values.yaml --set image.tag=${VERSION} --namespace=${ENVIRONMENT}
 
 # # call Python function :
 # if [ $? -eq 0 ]
