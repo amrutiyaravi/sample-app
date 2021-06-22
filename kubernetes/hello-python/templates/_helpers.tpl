@@ -46,6 +46,9 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 Selector labels
 */}}
 {{- define "hello-python.selectorLabels" -}}
+app: {{ include "hello-python.name" . }}
+version: {{ .Values.image.tag}}
+env: {{ .Release.Namespace }}
 app.kubernetes.io/name: {{ include "hello-python.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}

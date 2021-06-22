@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: gmanal1005/hello-python
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "red"
 
@@ -37,6 +37,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
+  enabled: true
   type: LoadBalancer
   port: 5000
   targetport: 5000
