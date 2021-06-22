@@ -15,7 +15,7 @@ pipeline {
         environment name: 'BUILD', value: 'true'
       }
       steps {
-        build job: 'build-app-docker-image', parameters: [
+        build job: 'app-build-docker-image', parameters: [
           string(name: 'VERSION', value: "${env.VERSION}"),
           string(name: 'APPLICATION', value: "${env.APPLICATION}"),
           string(name: 'ENVIRONMENT', value: "${env.ENVIRONMENT}")
@@ -28,7 +28,7 @@ pipeline {
         environment name: 'DEPLOY', value: 'true'
       }
       steps {
-        build job: 'deploy-app-pods', parameters: [
+        build job: 'app-deploy-image-pod', parameters: [
           string(name: 'VERSION', value: "${env.VERSION}"),
           string(name: 'APPLICATION', value: "${env.APPLICATION}"),
           string(name: 'ENVIRONMENT', value: "${env.ENVIRONMENT}")
@@ -41,7 +41,7 @@ pipeline {
         environment name: 'TEST', value: 'true'
       }
       steps {
-        build job: 'run-test-plan', parameters: [
+        build job: 'app-test-running-pod', parameters: [
           string(name: 'VERSION', value: "${env.VERSION}"),
           string(name: 'APPLICATION', value: "${env.APPLICATION}"),
           string(name: 'ENVIRONMENT', value: "${env.ENVIRONMENT}")
@@ -54,7 +54,7 @@ pipeline {
         environment name: 'UPGRADE', value: 'true'
       }
       steps {
-        build job: 'update-version', parameters: [
+        build job: 'app-update-version', parameters: [
           string(name: 'VERSION', value: "${env.VERSION}"),
           string(name: 'APPLICATION', value: "${env.APPLICATION}"),
           string(name: 'ENVIRONMENT', value: "${env.ENVIRONMENT}")
