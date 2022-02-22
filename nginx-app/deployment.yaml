@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-python-1.0.0
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-python-1.0.0
+      version: 1.0.0
+      env: dev
+      owner: maplelabs
+  template:
+    metadata:
+      labels:
+        app: hello-python-1.0.0
+        version: 1.0.0
+        env: environment
+        owner: maplelabs
+    spec:
+      containers:
+      - name: hello-python
+        image: iad.ocir.io/recvue/maplelabs/hello-python:1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000

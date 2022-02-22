@@ -6,10 +6,10 @@ spec:
   type: LoadBalancer
   ports:
     - port: 5000
-      targetPort: 5000
+      targetPort: http
       protocol: TCP
       name: http
   selector:
     app: hello-python
-    version: tagver
+    version: 1.0.0
     env: environment
