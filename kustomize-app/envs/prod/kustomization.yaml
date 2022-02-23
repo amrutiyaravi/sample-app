@@ -3,3 +3,6 @@ bases:
 patches:
   - replica_count.yaml
 namespace: prod
+images:
+  - name: gmanal1005/hello-python
+    newTag: green
