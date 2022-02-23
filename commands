@@ -29,3 +29,5 @@ helm uninstall hello-world
 # Kustomize -
 kubectl kustomize envs/dev
 kubectl apply -k envs/dev
+
+kubectl apply -k envs/dev

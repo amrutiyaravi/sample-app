@@ -1,0 +1,3 @@
+resources:
+- envs/dev
+- envs/prod

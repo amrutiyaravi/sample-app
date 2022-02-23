@@ -2,4 +2,4 @@ bases:
   - ../../python-app
 patches:
   - replica_count.yaml
-
+namespace: dev
