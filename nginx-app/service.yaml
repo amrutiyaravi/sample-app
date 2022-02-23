@@ -6,10 +6,12 @@ spec:
   type: LoadBalancer
   ports:
     - port: 5000
-      targetPort: http
+      targetPort: 5000
       protocol: TCP
       name: http
   selector:
     app: hello-python
     version: 1.0.0
-    env: environment
+    env: dev
+    owner: maplelabs
+

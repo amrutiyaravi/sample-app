@@ -7,21 +7,21 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-python-1.0.0
+      app: hello-python
       version: 1.0.0
       env: dev
       owner: maplelabs
   template:
     metadata:
       labels:
-        app: hello-python-1.0.0
+        app: hello-python
         version: 1.0.0
-        env: environment
+        env: dev
         owner: maplelabs
     spec:
       containers:
       - name: hello-python
-        image: iad.ocir.io/recvue/maplelabs/hello-python:1.0.0
+        image: gmanal1005/hello-python:red
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
