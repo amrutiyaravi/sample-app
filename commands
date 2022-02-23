@@ -3,19 +3,25 @@ kubectl describe pod nginx
 kubectl exec -it nginx -- sh
 kubectl rollout get rs ( rollout status )
 
-
 # update container -
 kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1
-
-
 
 # v1.22.5
 kubectl version
 
-# namespaces
+# namespaces -
 kubectl get namespaces --show-labels
 kubectl set-config gam-test
 kubectl config use-context gam-test
 
 # Execute commands
 kubectl exec pod/hello-world-78f5f69fcb-dkj8w -n gam-test -- apt-get update
+
+# helm
+helm create hello-world
+helm lint ./hello-world # ensure chart is well formed.
+helm template ./hello
+helm install --name hello-world ./hello-world
+helm install hello-world ./hello-world
+helm upgrade hello-world ./hello-world
+helm uninstall hello-world
