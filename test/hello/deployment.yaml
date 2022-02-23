@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world
+  namespace: gam-test
+spec:
+  selector:
+    matchLabels:
+      app: hello-world
+      owner: maplelabs
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: hello-world
+        owner: maplelabs
+    spec:
+      containers:
+        - name: hello-world
+          image: gcr.io/google-samples/node-hello:1.0
+          resources: {}
+          ports:
+            - containerPort: 8080
+              protocol: TCP

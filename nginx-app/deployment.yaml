@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-nginx
-  # namespace: gam-test
+  namespace: gam-test
 spec:
   replicas: 1
   selector:

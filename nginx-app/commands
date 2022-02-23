@@ -14,6 +14,8 @@ kubectl version
 
 # namespaces
 kubectl get namespaces --show-labels
-kubectl config use-context dev
+kubectl set-config gam-test
+kubectl config use-context gam-test
 
-
+# Execute commands
+kubectl exec pod/hello-world-78f5f69fcb-dkj8w -n gam-test -- apt-get update
