@@ -2,26 +2,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-python-1.0.0
+  name: hello-nginx
+  namespace: gam-test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-python
-      version: 1.0.0
-      env: dev
+      app: hello-nginx
       owner: maplelabs
   template:
     metadata:
       labels:
-        app: hello-python
-        version: 1.0.0
-        env: dev
+        app: hello-nginx
         owner: maplelabs
     spec:
       containers:
-      - name: hello-python
-        image: gmanal1005/hello-python:red
+      - name: hello-nginx
+        image: nginx:1.21.6
         imagePullPolicy: Always
         ports:
         - containerPort: 5000

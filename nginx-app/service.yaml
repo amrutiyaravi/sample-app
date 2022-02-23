@@ -1,17 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-python-service
+  name: hello-nginx-service
+  namespace: gam-test
 spec:
   type: LoadBalancer
   ports:
     - port: 5000
-      targetPort: 5000
+      targetPort: 80
       protocol: TCP
       name: http
   selector:
-    app: hello-python
-    version: 1.0.0
-    env: dev
+    app: hello-nginx
     owner: maplelabs
 
