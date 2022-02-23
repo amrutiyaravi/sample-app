@@ -1,0 +1,5 @@
+bases:
+  - ../../python-app
+patches:
+  - replica_count.yaml
+

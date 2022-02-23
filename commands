@@ -25,3 +25,7 @@ helm install --name hello-world ./hello-world
 helm install hello-world ./hello-world
 helm upgrade hello-world ./hello-world
 helm uninstall hello-world
+
+# Kustomize -
+kubectl kustomize envs/dev
+kubectl apply -k envs/dev
