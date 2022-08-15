@@ -30,6 +30,9 @@ jobs:
     working_directory: ~/sample-app/src/
     steps:
       - checkout
+      - run:
+          name: folder directory
+          command: pwd
       - python/install-packages:
           pkg-manager: pip
           # app-dir: ~/sample-app/src/  # If you're requirements.txt isn't in the root directory.
