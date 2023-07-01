@@ -1,0 +1,8 @@
+namespace: dev
+bases:
+  - ../../python-app
+patches:
+  - replica_count.yaml
+images:
+  - name: gmanal1005/hello-python
+    newTag: blue

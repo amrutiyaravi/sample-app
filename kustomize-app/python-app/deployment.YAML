@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-python
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-python
+      owner: maplelabs
+  template:
+    metadata:
+      labels:
+        app: hello-python
+        owner: maplelabs
+    spec:
+      containers:
+      - name: hello-python
+        image: gmanal1005/hello-python:red
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+        - containerPort: 5000
+          name: python-app

@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+namespace: test
+kind: Kustomization
+resources:
+- deployment.YAML
+- service.YAML
+- namespace.YAML

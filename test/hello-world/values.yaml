@@ -1,0 +1,8 @@
+replicaCount: 1
+image:
+  repository: "gmanal1005/hello-python"
+  tag: "red"
+  pullPolicy: IfNotPresent
+service:
+  type: LoadBalancer
+  port: 8888
